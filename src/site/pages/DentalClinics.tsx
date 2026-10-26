@@ -153,14 +153,18 @@ const DentalClinics = () => {
           <motion.p initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="mb-10 max-w-2xl text-muted-foreground">
             Seeing patients is only half your job. You know the other half all too well: the money, the stock, the staff — and that patient who hasn't been back in a year, the one you keep meaning to call. It all lives in the same system, using the same records.
           </motion.p>
-          <div className="mb-16 grid gap-4 md:grid-cols-2 lg:mb-24">
-            {coreGroups.map((group, i) => (
-              <motion.article key={group.title} initial="hidden" whileInView="show" viewport={viewport} variants={slide(i % 2 === 0 ? "left" : "right")} whileHover={{ y: -5 }} className={i === 1 ? "eye-panel-light min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8" : i === 2 ? "eye-panel-accent min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8" : "eye-panel min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8"}>
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10"><group.icon className="h-5 w-5 text-primary" /></div>
-                <h3 className="mb-2 text-xl font-bold">{group.title}</h3>
-                <p className="mb-5 font-medium text-primary">{group.benefit}</p>
-                <ul className="space-y-2.5">{group.points.map((point) => <li key={point} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" /><span>{point}</span></li>)}</ul>
-              </motion.article>
+          <div className="mb-16 divide-y divide-border border-y border-border lg:mb-24">
+            {coreGroups.map((group) => (
+              <motion.div key={group.title} initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="grid gap-3 py-6 md:grid-cols-[220px_1fr] md:gap-8">
+                <div className="flex items-center gap-3 md:items-start">
+                  <group.icon className="h-4 w-4 shrink-0 text-primary md:mt-1" />
+                  <div>
+                    <h3 className="text-base font-semibold text-foreground">{group.title}</h3>
+                    <p className="mt-1 hidden text-xs leading-relaxed text-muted-foreground md:block">{group.benefit}</p>
+                  </div>
+                </div>
+                <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">{group.points.map((point) => <li key={point} className="flex items-start gap-2 text-[13px] leading-snug text-muted-foreground"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" /><span>{point}</span></li>)}</ul>
+              </motion.div>
             ))}
           </div>
 
