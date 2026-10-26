@@ -43,7 +43,7 @@ const DentalCasesExplained = () => (
     <PageHero
       eyebrow="How per-case pricing works"
       title="₦1,000 per patient case, explained simply."
-      description="One problem, one case, one ₦1,000 — no matter how many visits it takes."
+      description="One case covers one patient for 30 days, up to 3 visits — everything in between is included."
       primaryCta={{ label: "Ask us on WhatsApp", href: WHATSAPP, external: true }}
       secondaryCta={{ label: "Back to pricing", href: "/industries/dental-clinics/pricing" }}
     />
