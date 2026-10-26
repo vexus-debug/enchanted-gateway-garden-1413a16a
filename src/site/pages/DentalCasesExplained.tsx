@@ -47,52 +47,52 @@ const DentalCasesExplained = () => (
       primaryCta={{ label: "Ask us on WhatsApp", href: WHATSAPP, external: true }}
       secondaryCta={{ label: "Back to pricing", href: "/industries/dental-clinics/pricing" }}
     />
-    <div className="mx-auto max-w-4xl space-y-16 px-4 py-16 sm:px-6">
+    <div className="mx-auto max-w-3xl space-y-12 px-4 py-12 sm:px-6">
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-foreground">What is a case?</h2>
-        <div className="grid gap-4 md:grid-cols-3">
+        <h2 className="mb-5 text-lg font-semibold text-foreground">What is a case?</h2>
+        <ol className="relative space-y-6 border-l border-border pl-6">
           {steps.map((s) => (
-            <div key={s.n} className="rounded-2xl border border-border bg-card p-6">
-              <p className="text-3xl font-bold text-primary">{s.n}</p>
-              <p className="mt-2 font-semibold text-foreground">{s.t}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
-            </div>
+            <li key={s.n} className="relative">
+              <span className="absolute -left-[33px] top-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[11px] font-bold text-primary-foreground">{s.n}</span>
+              <p className="text-sm font-medium text-foreground">{s.t}</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">{s.d}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-border bg-card p-6">
-          <h3 className="mb-4 font-semibold text-foreground">Counts as a case</h3>
-          <ul className="space-y-3">{counts.map((c) => <li key={c} className="flex gap-2 text-sm text-muted-foreground"><CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />{c}</li>)}</ul>
+      <section className="grid gap-8 sm:grid-cols-2">
+        <div>
+          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Uses a credit</h3>
+          <ul className="divide-y divide-border">{counts.map((c) => <li key={c} className="flex gap-2 py-2 text-[13px] text-muted-foreground"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />{c}</li>)}</ul>
         </div>
-        <div className="rounded-2xl border border-border bg-card p-6">
-          <h3 className="mb-4 font-semibold text-foreground">Free — not a new case</h3>
-          <ul className="space-y-3">{notCounts.map((c) => <li key={c} className="flex gap-2 text-sm text-muted-foreground"><XCircle className="h-5 w-5 shrink-0 text-muted-foreground" />{c}</li>)}</ul>
+        <div>
+          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Free</h3>
+          <ul className="divide-y divide-border">{notCounts.map((c) => <li key={c} className="flex gap-2 py-2 text-[13px] text-muted-foreground"><XCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" />{c}</li>)}</ul>
         </div>
       </section>
 
       <section>
-        <h2 className="mb-2 text-2xl font-bold text-foreground">Examples</h2>
-        <p className="mb-6 text-sm text-muted-foreground">Cases are counted per patient. One patient's visits never share or use up another patient's case.</p>
-        <div className="overflow-hidden rounded-2xl border border-border bg-card">
+        <h2 className="mb-1 text-lg font-semibold text-foreground">Examples</h2>
+        <p className="mb-4 text-[13px] text-muted-foreground">Cases are counted per patient. One patient's visits never share or use up another patient's case.</p>
+        <div className="divide-y divide-border border-y border-border">
           {examples.map((e) => (
-            <div key={e.who} className="flex items-center justify-between gap-4 border-b border-border p-4 last:border-b-0">
-              <div><p className="text-sm font-medium text-foreground">{e.who}</p><p className="text-xs text-muted-foreground">{e.calc}</p></div>
-              <p className="font-bold text-primary">{e.cost}</p>
+            <div key={e.who} className="flex items-start justify-between gap-4 py-4">
+              <div><p className="text-sm font-medium text-foreground">{e.who}</p><p className="mt-1 text-xs leading-relaxed text-muted-foreground">{e.calc}</p></div>
+              <p className="shrink-0 text-sm font-semibold text-primary">{e.cost}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-foreground">Quick answers</h2>
-        <div className="space-y-4">
+        <h2 className="mb-3 text-lg font-semibold text-foreground">Quick answers</h2>
+        <div className="divide-y divide-border border-y border-border">
           {faqs.map((f) => (
-            <div key={f.q} className="rounded-2xl border border-border bg-card p-5">
-              <p className="font-semibold text-foreground">{f.q}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{f.a}</p>
-            </div>
+            <details key={f.q} className="group py-3">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-foreground">{f.q}<span className="text-primary transition-transform group-open:rotate-45">+</span></summary>
+              <p className="mt-2 text-[13px] text-muted-foreground">{f.a}</p>
+            </details>
           ))}
         </div>
       </section>
