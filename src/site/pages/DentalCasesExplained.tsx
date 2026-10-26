@@ -24,10 +24,10 @@ const notCounts = [
 ];
 
 const examples = [
-  { who: "Scaling today, review in 2 weeks", calc: "1 case", cost: "₦1,000" },
-  { who: "Root canal: 3 visits in 30 days, crown on day 40", calc: "2 cases", cost: "₦2,000" },
-  { who: "Toothache in January, filling in March", calc: "2 cases", cost: "₦2,000" },
-  { who: "4 visits in the same month", calc: "2 cases", cost: "₦2,000" },
+  { who: "Patient A: Scaling today, review in 2 weeks", calc: "1 case — both visits are for the same patient within 14 days, inside the 30-day window and under the 3-visit limit.", cost: "₦1,000" },
+  { who: "Patient B: Root canal (3 visits in 3 weeks), crown on day 40", calc: "2 cases — visits 1–3 are covered by the first case. When the same patient returns on day 40, the 30 days have ended, so a 2nd case opens (another 30 days, up to 3 visits).", cost: "₦2,000" },
+  { who: "Patient C: Emergency visit in January, filling in March", calc: "2 cases — only 2 visits, but more than 30 days passed for this patient, so the March visit opens a new case.", cost: "₦2,000" },
+  { who: "Patient D: 4 visits in 3 weeks", calc: "2 cases — one case covers up to 3 visits for the same patient. The 4th visit opens a 2nd case with a fresh 30 days and 3 visits.", cost: "₦2,000" },
 ];
 
 const faqs = [
@@ -72,7 +72,8 @@ const DentalCasesExplained = () => (
       </section>
 
       <section>
-        <h2 className="mb-6 text-2xl font-bold text-foreground">Examples</h2>
+        <h2 className="mb-2 text-2xl font-bold text-foreground">Examples</h2>
+        <p className="mb-6 text-sm text-muted-foreground">Cases are counted per patient. One patient's visits never share or use up another patient's case.</p>
         <div className="overflow-hidden rounded-2xl border border-border bg-card">
           {examples.map((e) => (
             <div key={e.who} className="flex items-center justify-between gap-4 border-b border-border p-4 last:border-b-0">
