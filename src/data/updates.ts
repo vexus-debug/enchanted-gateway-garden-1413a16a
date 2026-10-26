@@ -13,6 +13,15 @@ export interface UpdateEntry {
 
 export const updates: UpdateEntry[] = [
   {
+    version: "v1.9.6",
+    date: "October 26, 2026",
+    title: "Pricing tagline fixed",
+    kind: "fix",
+    items: [
+      { kind: "fix", text: "The per-case pricing hero no longer says a case covers unlimited visits; it now states 30 days, up to 3 visits." },
+    ],
+  },
+  {
     version: "v1.9.5",
     date: "October 26, 2026",
     title: "Case calculator and free signup cases",
