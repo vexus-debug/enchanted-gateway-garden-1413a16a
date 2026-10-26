@@ -13,6 +13,16 @@ export interface UpdateEntry {
 
 export const updates: UpdateEntry[] = [
   {
+    version: "v1.9.5",
+    date: "October 26, 2026",
+    title: "Case calculator and free signup cases",
+    kind: "feature",
+    items: [
+      { kind: "feature", text: "Pricing page now has a calculator: enter one patient's visit dates to see cases and credits used." },
+      { kind: "improvement", text: "Pricing now notes 10 free cases at signup and that credits never expire." },
+    ],
+  },
+  {
     version: "v1.9.4",
     date: "October 26, 2026",
     title: "Clearer per-case examples",

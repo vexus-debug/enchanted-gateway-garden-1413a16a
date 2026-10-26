@@ -5,7 +5,7 @@ import { CheckCircle2, XCircle } from "lucide-react";
 const WHATSAPP = "https://wa.me/2349017758165?text=Hello%20I%20have%20a%20question%20about%20Clinexus%20per-case%20pricing";
 
 const steps = [
-  { n: "1", t: "Buy credits in advance", d: "1 credit = 1 case = ₦1,000. Your balance shows on the wallet button in your dashboard." },
+  { n: "1", t: "Start with 10 free cases, then buy credits in advance", d: "Every clinic gets 10 free cases at signup. After that, 1 credit = 1 case = ₦1,000. Credits never expire. Your balance shows on the wallet button in your dashboard." },
   { n: "2", t: "A credit is used on first clinical work", d: "Booking, checking in, or adding a note, plan, chart, X-ray, prescription, lab order or invoice for a patient with no open case." },
   { n: "3", t: "The case covers 30 days, up to 3 visits", d: "Everything for that patient is covered. The 4th visit, or any visit after 30 days, opens a new case." },
 ];
@@ -31,7 +31,8 @@ const examples = [
 ];
 
 const faqs = [
-  { q: "When do I pay?", a: "In advance. You buy credits and they are used as you go. To top up, contact Clinexus support." },
+  { q: "When do I pay?", a: "In advance. You start with 10 free cases at signup, then buy credits that are used as you go. To top up, contact Clinexus support." },
+  { q: "Do credits expire?", a: "No. Credits last indefinitely until you use them." },
   { q: "What happens at zero credits?", a: "Old records stay open, but new cases are blocked until you top up. The wallet turns red below 5 credits." },
   { q: "Do I get a credit back if I delete a visit?", a: "No. Deleting or cancelling a visit does not return the credit." },
   { q: "Is there a monthly subscription too?", a: "No. Only the one-time setup fee (₦30,000–₦50,000) and ₦1,000 per case." },
