@@ -5,34 +5,35 @@ import { CheckCircle2, XCircle } from "lucide-react";
 const WHATSAPP = "https://wa.me/2349017758165?text=Hello%20I%20have%20a%20question%20about%20Clinexus%20per-case%20pricing";
 
 const steps = [
-  { n: "1", t: "A patient comes in with a problem", d: "For example, a toothache, a cleaning, or braces. That problem is one case." },
-  { n: "2", t: "You open a case for it", d: "The case holds everything for that problem: visits, charting, treatment, payments." },
-  { n: "3", t: "You're charged ₦1,000 once", d: "That's it for that case — no matter how many follow-up visits it takes." },
+  { n: "1", t: "Buy credits in advance", d: "1 credit = 1 case = ₦1,000. Your balance shows on the wallet button in your dashboard." },
+  { n: "2", t: "A credit is used on first clinical work", d: "Booking, checking in, or adding a note, plan, chart, X-ray, prescription, lab order or invoice for a patient with no open case." },
+  { n: "3", t: "The case covers 30 days, up to 3 visits", d: "Everything for that patient is covered. The 4th visit, or any visit after 30 days, opens a new case." },
 ];
 
 const counts = [
-  "A new patient with a new problem",
-  "An existing patient back with a different problem",
-  "Two separate problems treated separately (2 cases)",
+  "First clinical work for a patient with no open case",
+  "A 4th visit within the same 30 days",
+  "Any visit after the 30 days are up",
+  "Moving an old appointment to a date outside its 30 days",
 ];
 const notCounts = [
-  "Follow-up or review visits for the same case",
-  "Adding notes, X-rays, payments or appointments to an open case",
-  "Patients who only booked and never came",
-  "Simply registering a patient",
+  "Registering a new patient",
+  "Viewing old records, charts and reports",
+  "Editing anything inside an open case",
+  "Visits 2 and 3 within the same 30 days",
 ];
 
 const examples = [
-  { who: "Root canal over 3 visits", calc: "1 case", cost: "₦1,000" },
-  { who: "Braces over 18 months of reviews", calc: "1 case", cost: "₦1,000" },
-  { who: "Cleaning today, filling next month (different problem)", calc: "2 cases", cost: "₦2,000" },
-  { who: "Clinic handles 120 cases in a month", calc: "120 × ₦1,000", cost: "₦120,000" },
+  { who: "Scaling today, review in 2 weeks", calc: "1 case", cost: "₦1,000" },
+  { who: "Root canal: 3 visits in 30 days, crown on day 40", calc: "2 cases", cost: "₦2,000" },
+  { who: "Toothache in January, filling in March", calc: "2 cases", cost: "₦2,000" },
+  { who: "4 visits in the same month", calc: "2 cases", cost: "₦2,000" },
 ];
 
 const faqs = [
-  { q: "When do I pay?", a: "At the end of each month you get a simple bill showing the number of cases you opened." },
-  { q: "What if it's a quiet month?", a: "Fewer cases, smaller bill. No cases, no bill." },
-  { q: "Can I see my count?", a: "Yes. Your dashboard shows how many cases you've opened this month at any time." },
+  { q: "When do I pay?", a: "In advance. You buy credits and they are used as you go. To top up, contact Clinexus support." },
+  { q: "What happens at zero credits?", a: "Old records stay open, but new cases are blocked until you top up. The wallet turns red below 5 credits." },
+  { q: "Do I get a credit back if I delete a visit?", a: "No. Deleting or cancelling a visit does not return the credit." },
   { q: "Is there a monthly subscription too?", a: "No. Only the one-time setup fee (₦30,000–₦50,000) and ₦1,000 per case." },
 ];
 
