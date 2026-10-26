@@ -13,6 +13,15 @@ export interface UpdateEntry {
 
 export const updates: UpdateEntry[] = [
   {
+    version: "v1.9.4",
+    date: "October 26, 2026",
+    title: "Clearer per-case examples",
+    kind: "improvement",
+    items: [
+      { kind: "improvement", text: "Per-case pricing examples now explain, patient by patient, why each costs 1 or 2 cases." },
+    ],
+  },
+  {
     version: "v1.9.3",
     date: "October 26, 2026",
     title: "Per-case explanation corrected",
